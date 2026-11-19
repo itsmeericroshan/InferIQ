@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { prompt, model = 'mistralai/Mistral-7B-Instruct-v0.2' } = req.body || {};
+  const { prompt, model = 'gpt2' } = req.body || {};
 
   if (!prompt) return res.status(400).json({ error: 'prompt is required' });
 
